@@ -1,0 +1,2 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE IF NOT EXISTS service_request(ticket_id TEXT PRIMARY KEY,student_id TEXT NOT NULL,student_name TEXT NOT NULL,category TEXT NOT NULL CHECK(category IN ('ENROLLMENT','DOCUMENT','PAYMENT','ADVISING')),priority INTEGER NOT NULL CHECK(priority BETWEEN 1 AND 5),description TEXT NOT NULL,estimated_days INTEGER NOT NULL CHECK(estimated_days>=1),status TEXT NOT NULL CHECK(status IN ('NEW','IN_PROGRESS','RESOLVED','CANCELLED')),created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
